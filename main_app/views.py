@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Log
 
 
@@ -33,3 +34,12 @@ def logs_index(request):
 def logs_detail(request, log_id):
     log = Log.objects.get(id=log_id)
     return render(request, 'logs/detail.html', {'log': log})
+
+class LogCreate(CreateView):
+    model = Log
+    fields = ['date', 'day_rating', 'pain_lvl', 'fatigue_lvl', 'water_cups', 'sleep_hours', 'time_outside', 'meds', 'mood', 'breakfast', 'lunch', 'dinner', 'snacks', 'day_notes']
+    success_url = '/dashboard/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
