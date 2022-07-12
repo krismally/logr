@@ -41,3 +41,6 @@ class Log(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'log_id': self.id})
+
+    class Meta:
+        ordering = ['-date']

@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required
 from .models import Log
 
 
@@ -27,10 +28,12 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
+@login_required
 def logs_index(request):
     logs = Log.objects.filter(user=request.user)
     return render(request, 'logs/index.html', {'logs': logs})
 
+@login_required
 def logs_detail(request, log_id):
     log = Log.objects.get(id=log_id)
     return render(request, 'logs/detail.html', {'log': log})
