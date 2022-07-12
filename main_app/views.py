@@ -29,3 +29,7 @@ def signup(request):
 def logs_index(request):
     logs = Log.objects.filter(user=request.user)
     return render(request, 'logs/index.html', {'logs': logs})
+
+def logs_detail(request, log_id):
+    log = Log.objects.get(id=log_id)
+    return render(request, 'logs/detail.html', {'log': log})

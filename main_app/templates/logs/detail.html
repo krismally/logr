@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>{{ log.date }}</h1>
+
+<dl>
+    <dt>Overall Day Rating (1-10):</dt><dd>{{ log.day_rating }}</dd>
+    <dt>Pain Level (1-10):</dt><dd>{{ log.pain_lvl }}</dd>
+    <dt>Fatigue Level (1-10):</dt><dd>{{ log.fatigue_lvl }}</dd>
+    <dt>Glasses of Water:</dt><dd>{{ log.water_cups }}</dd>
+    <dt>Hours of Sleep:</dt><dd>{{ log.sleep_hours }}</dd>
+    <dt>Time Spent Outside (minutes):</dt><dd>{{ log.time_outside }}</dd>
+    <dt>Meds Taken:</dt><dd>{{ log.meds }}</dd>
+    <dt>Today's Mood:</dt><dd>{{ log.mood }}</dd>
+    <dt>Food Log:</dt>
+    <dl>
+        <dl>Breakfast: {{ log.breakfast }}</dl>
+        <dl>Lunch: {{ log.lunch }}</dl>
+        <dl>Dinner: {{ log.dinner }}</dl>
+        <dl>Snacks: {{ log.snacks }}</dl>
+    </dl>
+    <dt>Day Notes:</dt><dd>{{ log.day_notes }}</dd>
+</dl>
+
+{% endblock %}

@@ -4,7 +4,7 @@
 
 {% for log in logs %}
 <div>
-    <a href="#">
+    <a href="{% url 'detail' log.id %}">
         <div>
             <h2>{{ log.date }}</h2>
         </div>

@@ -5,11 +5,11 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.forms import BooleanField
 
 MOODS = (
-    ('5', 'Big Smile'),
-    ('4', 'Slight Smile'),
-    ('3', 'Neutral'),
-    ('2', 'Slight Frown'),
-    ('1', 'Big Frown')
+    (':D', 'Big Smile'),
+    (':)', 'Slight Smile'),
+    (':|', 'Neutral'),
+    ('):', 'Slight Frown'),
+    ('D:', 'Big Frown')
 )
 
 # Create your models here.
@@ -23,7 +23,7 @@ class Log(models.Model):
     time_outside = models.IntegerField()
     meds = models.CharField(max_length=200)
     mood = models.CharField(
-        max_length=1,
+        max_length=2,
         choices=MOODS,
         default=MOODS[0][0]
     )
