@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from .models import Log
+
 
 # Create your views here.
 def home(request):
@@ -23,3 +25,7 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
+
+def logs_index(request):
+    logs = Log.objects.filter(user=request.user)
+    return render(request, 'logs/index.html', {'logs': logs})

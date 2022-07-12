@@ -129,7 +129,7 @@ STATIC_URL = 'static/'
 
 # Redirect after successful login
 # Change to dashboard once created
-LOGIN_REDIRECT_URL= '/'
+LOGIN_REDIRECT_URL= '/dashboard/'
 
 # Redirect after logout
 LOGOUT_REDIRECT_URL = '/'
