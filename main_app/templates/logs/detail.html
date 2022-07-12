@@ -4,7 +4,7 @@
 
 <div>
     <a href="{% url 'logs_update' log.id %}">Edit Log</a>
-    <a href="#">Delete Log</a>
+    <a href="{% url 'logs_delete' log.id %}">Delete Log</a>
 </div>
 <dl>
     <dt>Overall Day Rating (1-10):</dt><dd>{{ log.day_rating }}</dd>
