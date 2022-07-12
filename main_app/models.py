@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.forms import BooleanField
+from django.urls import reverse
 
 MOODS = (
     (':D', 'Big Smile'),
@@ -37,3 +38,6 @@ class Log(models.Model):
 
     def __str__(self):
         return self.date.strftime("%d-%b-%y")
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'log_id': self.id})

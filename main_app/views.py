@@ -43,3 +43,11 @@ class LogCreate(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+class LogUpdate(UpdateView):
+    model = Log
+    fields = ['date', 'day_rating', 'pain_lvl', 'fatigue_lvl', 'water_cups', 'sleep_hours', 'time_outside', 'meds', 'mood', 'breakfast', 'lunch', 'dinner', 'snacks', 'day_notes']
+
+class LogDelete(DeleteView):
+    model = Log
+    success_url = '/dashboard/'
