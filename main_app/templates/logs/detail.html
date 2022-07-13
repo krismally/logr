@@ -7,8 +7,12 @@
     <a class="btn btn-danger" href="{% url 'logs_delete' log.id %}">Delete Log</a>
 </div>
 <dl>
-    <dt>Overall Day Rating (1-10):</dt><dd>{{ log.day_rating }}</dd>
-    <dt>Pain Level (1-10):</dt><dd>{{ log.pain_lvl }}</dd>
+    <dt>Overall Day Rating (1-10):</dt>
+    {% if log.day_rating != null %}<dd>{{ log.day_rating }}</dd>
+    {% else %}<dd> - </dd>
+    <dt>Pain Level (1-10):</dt>
+    {% if log.pain_lvl != null %}<dd>{{ log.pain_lvl }}</dd>
+    {% else %}<dd> - </dd>
     <dt>Fatigue Level (1-10):</dt><dd>{{ log.fatigue_lvl }}</dd>
     <dt>Glasses of Water:</dt><dd>{{ log.water_cups }}</dd>
     <dt>Hours of Sleep:</dt><dd>{{ log.sleep_hours }}</dd>
