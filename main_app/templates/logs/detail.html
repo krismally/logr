@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>{{ log.date }}</h1>
+<h1>{{ log.date }}'s Entry</h1>
 
 <div>
     <a class="btn btn-info" href="{% url 'logs_update' log.id %}">Edit Log</a>
