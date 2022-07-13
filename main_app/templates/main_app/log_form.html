@@ -11,7 +11,11 @@
     <table>
         {{ form.as_table }}
     </table>
+    {% if object %}
+    <input type="submit" value="Save Edits" class="btn btn-primary" />
+    {% else %}
     <input type="submit" value="Add New Log" class="btn btn-primary" />
+    {% endif %}
 </form>
 
 {% endblock %}
