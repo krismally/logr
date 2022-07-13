@@ -1,14 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1 class="display-1">My Logs</h1>
-
+<div class="m-3 p-6 border container-lg">
+    <div class="row">
 {% for log in logs %}
-<div>
-    <a href="{% url 'detail' log.id %}">
-        <div>
-            <h2 class="display-6">{{ log.date }}</h2>
+        <div class="m-3 p-3 border shadow-sm col-lg-2 col-md-2 col-sm-4">
+            <a href="{% url 'detail' log.id %}">
+                <div>
+                    <h2 class="display-6 text-center">{{ log.date }}</h2>
+                </div>
+            </a>
         </div>
-    </a>
-</div>
 {% endfor %}
+    </div>
+</div>
 {% endblock %}
