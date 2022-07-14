@@ -1,28 +1,30 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>{{ log.date }}'s Entry</h1>
+<h1 class="mx-4 my-3">{{ log.date }}'s Entry</h1>
 
-<div>
+<div class="mx-4 my-2">
     <a class="btn btn-info" href="{% url 'logs_update' log.id %}">Edit Log</a>
     <a class="btn btn-danger" href="{% url 'logs_delete' log.id %}">Delete Log</a>
 </div>
-<dl>
-    <dt>Overall Day Rating (1-10):</dt><dd>{{ log.day_rating }}</dd>
-    <dt>Pain Level (1-10):</dt><dd>{{ log.pain_lvl }}</dd>
-    <dt>Fatigue Level (1-10):</dt><dd>{{ log.fatigue_lvl }}</dd>
-    <dt>Glasses of Water:</dt><dd>{{ log.water_cups }}</dd>
-    <dt>Hours of Sleep:</dt><dd>{{ log.sleep_hours }}</dd>
-    <dt>Time Spent Outside (minutes):</dt><dd>{{ log.time_outside }}</dd>
-    <dt>Meds Taken:</dt><dd>{{ log.meds }}</dd>
-    <dt>Today's Mood:</dt><dd>{{ log.mood }}</dd>
-    <dt>Food Log:</dt>
-    <dl>
-        <dl>Breakfast: {{ log.breakfast }}</dl>
-        <dl>Lunch: {{ log.lunch }}</dl>
-        <dl>Dinner: {{ log.dinner }}</dl>
-        <dl>Snacks: {{ log.snacks }}</dl>
+<div class="border container row-cols-1 my-2 mx-4">
+    <dl class="row my-3 g-2">
+        <dt class="col-sm-4 fs-5">Overall Day Rating (1-10):</dt><dd class="col-sm-8 fs-5">{{ log.day_rating }}</dd>
+        <dt class="col-sm-4 fs-5">Pain Level (1-10):</dt><dd class="col-sm-8 fs-5">{{ log.pain_lvl }}</dd>
+        <dt class="col-sm-4 fs-5">Fatigue Level (1-10):</dt><dd class="col-sm-8 fs-5">{{ log.fatigue_lvl }}</dd>
+        <dt class="col-sm-4 fs-5">Glasses of Water:</dt><dd class="col-sm-8 fs-5">{{ log.water_cups }}</dd>
+        <dt class="col-sm-4 fs-5">Hours of Sleep:</dt><dd class="col-sm-8 fs-5">{{ log.sleep_hours }}</dd>
+        <dt class="col-sm-4 fs-5">Time Spent Outside (minutes):</dt><dd class="col-sm-8 fs-5">{{ log.time_outside }}</dd>
+        <dt class="col-sm-4 fs-5">Meds Taken:</dt><dd class="col-sm-8 fs-5">{{ log.meds }}</dd>
+        <dt class="col-sm-4 fs-5">Today's Mood:</dt><dd class="col-sm-8 fs-5">{{ log.mood }}</dd>
+        <dt class="col-sm-4 fs-5">Food Log:</dt>
+        <dl class="col-sm-8 fs-5">
+            <dl>Breakfast: {{ log.breakfast }}</dl>
+            <dl>Lunch: {{ log.lunch }}</dl>
+            <dl>Dinner: {{ log.dinner }}</dl>
+            <dl>Snacks: {{ log.snacks }}</dl>
+        </dl>
+        <dt class="col-sm-4 fs-5">Day Notes:</dt><dd class="col-sm-8 fs-5">{{ log.day_notes }}</dd>
     </dl>
-    <dt>Day Notes:</dt><dd>{{ log.day_notes }}</dd>
-</dl>
+</div>
 
 {% endblock %}
