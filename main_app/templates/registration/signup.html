@@ -1,16 +1,18 @@
 {% extends 'base.html' %} {% block content %}
+<div class="container my-4">
+    <h1>Sign Up</h1>
 
-<h1>Sign Up</h1>
+    {% if error_message %}
+    <p class="error-message">{{ error_message }}</p>
+    {% endif %}
 
-{% if error_message %}
-<p class="error-message">{{ error_message }}</p>
-{% endif %}
-
-<!-- Signup Form -->
-<form action="{% url 'signup' %}" method="post">
-    {% csrf_token %}{{ form.as_p }}
-    <input type="submit" value="signup" />
-    <input type="hidden" name="next" value="{{ next }}">
-</form>
-
+    <!-- Signup Form -->
+    <form action="{% url 'signup' %}" method="post">
+        <table class="table my-2">
+            {% csrf_token %}{{ form.as_table }}
+        </table>
+        <input class="btn btn-success" type="submit" value="signup" />
+        <input class="btn btn-success" type="hidden" name="next" value="{{ next }}">
+    </form>
+</div>
 {% endblock %}

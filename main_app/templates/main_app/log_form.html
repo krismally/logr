@@ -1,14 +1,14 @@
 {% extends 'base.html' %} {% block content %}
-
+<div class="container m-2">
 {% if object %}
-<h1>Edit {{ object.date }}'s Entry</h1>
+<h1 class="display-4">Edit {{ object.date }}'s Entry</h1>
 {% else %}
-<h1>New Log Entry</h1>
+<h1 class="display-4">New Log Entry</h1>
 {% endif %}
 
-<form action="" method="post">
+<form class="my-3" action="" method="post">
     {% csrf_token %}
-    <table>
+    <table class="table table-striped">
         {{ form.as_table }}
     </table>
     {% if object %}
@@ -17,5 +17,5 @@
     <input type="submit" value="Add New Log" class="btn btn-primary" />
     {% endif %}
 </form>
-
+</div>
 {% endblock %}
