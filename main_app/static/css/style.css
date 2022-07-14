@@ -9,4 +9,14 @@ a {
 
 .header {
     background: #023047 !important;
+    padding: 10px;
+}
+
+nav a,
+.nav-link,
+.navbar-brand,
+.navbar-toggler-icon,
+.navbar-toggler,
+.navbar-brand:hover {
+    color: #8ECAE6 !important;
 }
