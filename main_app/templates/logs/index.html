@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1 class="display-1 m-3">My Logs</h1>
-<div class="m-2 p-6 border container-lg">
+<h1 class="display-1 fw-semibold text-primary m-3">My Logs</h1>
+<div class="m-2 px-3 p-6 border border-primary container-lg">
     <div class="row">
 {% for log in logs %}
-        <div class="m-3 p-3 card shadow-sm col-lg-2 col-md-2 col-sm-4 align-items-center justify-content-center">
+        <div class="m-3 p-3 card border-primary bg-primary shadow col-lg-2 col-md-2 col-sm-4 align-items-center justify-content-center">
             <a href="{% url 'detail' log.id %}">
                 <div>
-                    <h2 class="text-center card-title">{{ log.date }}</h2>
+                    <h2 class="text-center text-info card-title">{{ log.date }}</h2>
                 </div>
             </a>
         </div>

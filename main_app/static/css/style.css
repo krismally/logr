@@ -20,3 +20,7 @@ nav a,
 .navbar-brand:hover {
     color: #8ECAE6 !important;
 }
+
+.card:hover {
+    text-shadow: 4px 2px 4px #6c757d;
+}

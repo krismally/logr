@@ -1,12 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1 class="mx-3 my-3">{{ log.date }}'s Entry</h1>
+<h1 class="mx-3 my-3 display-3 fw-normal text-primary">{{ log.date }}'s Entry</h1>
 
 <div class="mx-3 my-2">
-    <a class="btn btn-info" href="{% url 'logs_update' log.id %}">Edit Log</a>
+    <a class="btn btn-primary" href="{% url 'logs_update' log.id %}">Edit Log</a>
     <a class="btn btn-danger" href="{% url 'logs_delete' log.id %}">Delete Log</a>
 </div>
-<div class="border container row-cols-1 my-2 mx-3">
+<div class="text-primary border border-primary container row-cols-1 my-2 mx-3">
     <dl class="row my-3 g-2">
         <dt class="col-sm-4 fs-5">Overall Day Rating (1-10):</dt><dd class="col-sm-8 fs-5">{{ log.day_rating }}</dd>
         <dt class="col-sm-4 fs-5">Pain Level (1-10):</dt><dd class="col-sm-8 fs-5">{{ log.pain_lvl }}</dd>
