@@ -20,6 +20,7 @@ I came up with the idea for Logr after I had created a Daily Symptom Log to bett
 - CSS3
 - Bootstrap 5
 - Bootstrap Icons
+- Sass
 
 ## Refactoring
 The first version of Logr was built with the MEN stack. I wanted to implement user authentication and other features so I decided to refactor the codebase after learning Django! Django's enhanced security features, built-in user authentication, and it's ORM was the reason I chose to refactor Logr to the Django codebase.
@@ -28,6 +29,7 @@ The first version of Logr was built with the MEN stack. I wanted to implement us
 [Click Here to see the deployed app](https://logr-daily-symptom-tracker.herokuapp.com/)! To add a new log entry click "New Log" and fill out form details. Please note - the Share button is an empty link because it is still in development.
 
 ## Current App
+<img alt="Landing" src="./main_app/static/assets/landing.png">
 <img alt="Dashboard" src="./main_app/static/assets/dashboard.png">
 <img alt="Details" src="./main_app/static/assets/details.png">
 
